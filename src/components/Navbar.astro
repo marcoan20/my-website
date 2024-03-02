@@ -1,0 +1,18 @@
+---
+  import { Image } from 'astro:assets';
+  import headerNoise from "../assets/header-noise.png";
+  interface Props {
+    route?: string;
+  }
+
+  const { route } = Astro.props
+---
+
+
+<div class="w-full h-[4.375rem] bg-header bg-opacity-20 backdrop-blur-md fixed top-0 justify-evenly ml-auto gap items-center flex text-white font-light z-10">
+  <a href="/" class="z-10"><span class={`${!route && "border-b-2 border-white border-spacing-1"}`}>Home</span></a>
+  <a href="/blog" class="z-10"><span class={`${route == "blog" && "border-b-2 border-white border-spacing-1"}`}>Blog</span></a>
+  <a href="/videos" class="z-10"><span class={`${route == "videos" && "border-b-2 border-white border-spacing-1"}`}>Videos</span></a>
+  <a href="/projects" class="z-10"><span class={`${route == "projects" && "border-b-2 border-white border-spacing-1"}`}>Projects</span></a>
+  <!-- <Image src={headerNoise} class="z-0 backdrop-blur-md opacity-80 w-full h-full object-cover absolute" alt="Header Noise" /> -->
+</div>
